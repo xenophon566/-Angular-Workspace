@@ -8,7 +8,7 @@ module.exports = {
     },
     hasNextPage: false,
     recordCount: 100,
-    items: makeChatList(10),
+    items: makeChatList(20),
 };
 
 function makeChatList(recordNum = 10) {
