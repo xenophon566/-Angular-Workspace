@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { AppRoutingModule } from "./app.routing.module";
+import { HttpClientModule } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NbEvaIconsModule } from "@nebular/eva-icons";
 import { NbThemeModule } from "@nebular/theme";
@@ -11,6 +12,7 @@ import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFireDatabaseModule } from "@angular/fire/compat/database";
 import { CoreModule } from "@core/core.module";
 import { AppComponent } from "./app.component";
+import { HomeComponent } from "./home/home.component";
 import { DemoButtonsComponent } from "./demo-buttons/demo-buttons.component";
 import { DemoFirebaseComponent } from "./demo-firebase/demo-firebase.component";
 
@@ -28,6 +30,7 @@ const firebaseConfig = {
     imports: [
         AppRoutingModule,
         BrowserModule,
+        HttpClientModule,
         FormsModule,
         ReactiveFormsModule,
         MatNativeDateModule,
@@ -40,7 +43,7 @@ const firebaseConfig = {
         AngularFireModule.initializeApp(firebaseConfig),
         CoreModule,
     ],
-    declarations: [AppComponent, DemoButtonsComponent, DemoFirebaseComponent],
+    declarations: [AppComponent, HomeComponent, DemoButtonsComponent, DemoFirebaseComponent],
     bootstrap: [AppComponent],
 })
 export class AppModule {}

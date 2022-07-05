@@ -1,0 +1,19 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "title": "json-server",
+            "author": "tgt3dv"
+        }
+    ],
+    "comments": [
+        {
+            "id": 1,
+            "body": "some tgt3dv",
+            "postId": 1
+        }
+    ],
+    "profile": {
+        "name": "tgt3dv"
+    }
+}
