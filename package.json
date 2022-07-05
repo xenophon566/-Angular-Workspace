@@ -4,7 +4,6 @@
     "description": "Example project from an angular.io guide.",
     "license": "MIT",
     "scripts": {
-        "backend": "json-server -w db.json",
         "mock": "nodemon -w ./_mockserver --exec json-server ./_mockserver/_db.js -c _mockserver/config.json",
         "ng": "ng",
         "start": "ng serve",
@@ -56,6 +55,7 @@
         "node-sass": "^7.0.1",
         "nodemon": "^2.0.18",
         "protractor": "~7.0.0",
+        "faker": "^6.6.6",
         "sass-loader": "^13.0.2",
         "ts-node": "~10.8.0",
         "typescript": "~4.7.2",
