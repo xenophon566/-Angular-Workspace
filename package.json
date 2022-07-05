@@ -1,17 +1,14 @@
 {
     "name": "angular.io-example",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "description": "Example project from an angular.io guide.",
     "license": "MIT",
     "scripts": {
         "start": "npm-run-all -p mock dev-mock",
-        "dev-mock": "ng serve --configuration=dev-mock",
+        "dev-mock": "ng serve",
         "mock": "nodemon -w ./_mockserver --exec json-server ./_mockserver/_db.js -c _mockserver/config.json",
         "ng": "ng",
-        "build": "ng build",
-        "watch": "ng build --watch --configuration development",
-        "test": "ng test",
-        "e2e": "ng e2e"
+        "build": "ng build"
     },
     "private": true,
     "dependencies": {
