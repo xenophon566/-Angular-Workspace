@@ -14,7 +14,6 @@ export class AppComponent {
     ) {
         // set user language family
         this.languageService.setLang();
-
         // set languages to local storage
         this.languageService.language$.subscribe((resp) => {
             this.globalService.globalLangObj = resp.translations;

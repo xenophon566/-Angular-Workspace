@@ -1,7 +1,7 @@
 import { NgModule, LOCALE_ID } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { AppRoutingModule } from "./app.routing.module";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NbEvaIconsModule } from "@nebular/eva-icons";
 import { NbThemeModule } from "@nebular/theme";
@@ -11,7 +11,9 @@ import { MaterialModule } from "@define/material/material.module";
 import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFireDatabaseModule } from "@angular/fire/compat/database";
 import { CoreModule } from "@core/core.module";
-import { LanguageService } from "@core/utils";
+import { SharedModule } from "@shared/shared.module";
+import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
 import { DemoButtonsComponent } from "./demo-buttons/demo-buttons.component";
@@ -26,6 +28,10 @@ const firebaseConfig = {
     appId: "1:777760611121:web:1a757fd2b3c79bbee62e10",
     measurementId: "G-SJSJSZC08Q",
 };
+
+export function createTranslateLoader(http: HttpClient) {
+    return new TranslateHttpLoader(http, "../assets/i18n/", ".json");
+}
 
 @NgModule({
     imports: [
@@ -43,13 +49,14 @@ const firebaseConfig = {
         AngularFireDatabaseModule,
         AngularFireModule.initializeApp(firebaseConfig),
         CoreModule,
-    ],
-    providers: [
-        {
-            provide: LOCALE_ID,
-            deps: [LanguageService],
-            useFactory: (languageService) => languageService.getLocale(),
-        },
+        SharedModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: createTranslateLoader,
+                deps: [HttpClient],
+            },
+        }),
     ],
     declarations: [AppComponent, HomeComponent, DemoButtonsComponent, DemoFirebaseComponent],
     bootstrap: [AppComponent],

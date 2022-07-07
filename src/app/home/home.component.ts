@@ -9,6 +9,8 @@ import { HttpClient } from "@angular/common/http";
 export class HomeComponent implements OnInit {
     constructor(private httpClient: HttpClient) {}
 
+    i18n = JSON.parse(localStorage.getItem('languages'));
+
     version = VERSION.full;
 
     chatroomList = [];
