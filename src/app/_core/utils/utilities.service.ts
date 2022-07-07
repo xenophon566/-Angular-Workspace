@@ -2,9 +2,9 @@ import { Injectable } from "@angular/core";
 import { Location } from "@angular/common";
 import { Router } from "@angular/router";
 import { GLOBAL, SET_TIMEOUT } from "@core/services";
-import { environment } from "@env/environment";
 import * as CryptoJS from "crypto-js";
 import html2canvas from "html2canvas";
+import { environment } from "@env/environment";
 
 /**
  * Utilities Service

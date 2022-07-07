@@ -1,3 +1,4 @@
 import { UtilitiesService } from "./utilities.service";
+import { LanguageService } from "./language.service";
 
-export { UtilitiesService };
+export { UtilitiesService, LanguageService };

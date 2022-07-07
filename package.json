@@ -25,6 +25,8 @@
         "@angular/router": "^14.0.0-rc.0",
         "@nebular/eva-icons": "^9.0.3",
         "@nebular/theme": "^9.0.3",
+        "@ngx-translate/core": "^14.0.0",
+        "@ngx-translate/http-loader": "^7.0.0",
         "angular-in-memory-web-api": "~0.13.0",
         "crypto-js": "^4.1.1",
         "eva-icons": "^1.1.3",
