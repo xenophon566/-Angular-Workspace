@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { NgModule, LOCALE_ID } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { AppRoutingModule } from "./app.routing.module";
 import { HttpClientModule } from "@angular/common/http";
@@ -11,6 +11,7 @@ import { MaterialModule } from "@define/material/material.module";
 import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFireDatabaseModule } from "@angular/fire/compat/database";
 import { CoreModule } from "@core/core.module";
+import { LanguageService } from "@core/utils";
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
 import { DemoButtonsComponent } from "./demo-buttons/demo-buttons.component";
@@ -42,6 +43,13 @@ const firebaseConfig = {
         AngularFireDatabaseModule,
         AngularFireModule.initializeApp(firebaseConfig),
         CoreModule,
+    ],
+    providers: [
+        {
+            provide: LOCALE_ID,
+            deps: [LanguageService],
+            useFactory: (languageService) => languageService.getLocale(),
+        },
     ],
     declarations: [AppComponent, HomeComponent, DemoButtonsComponent, DemoFirebaseComponent],
     bootstrap: [AppComponent],
