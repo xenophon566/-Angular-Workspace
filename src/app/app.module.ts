@@ -48,7 +48,7 @@ export function createTranslateLoader(http: HttpClient) {
         ...NEBULAR_ALL,
         AngularFireDatabaseModule,
         AngularFireModule.initializeApp(firebaseConfig),
-        CoreModule,
+        CoreModule.forRoot(),
         SharedModule,
         TranslateModule.forRoot({
             loader: {
